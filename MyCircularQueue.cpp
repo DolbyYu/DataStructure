@@ -92,5 +92,5 @@ float MyCircularQueue::movingAvg(int winSize) {
             break;
         sum += (float)myQueue[index];
     }
-    return sum / (i+1);
+    return sum / i;
 }
