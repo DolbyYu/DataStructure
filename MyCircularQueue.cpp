@@ -58,7 +58,7 @@ int MyCircularQueue::Rear() {
     return myQueue[rear];
 }
 
-bool MyCircularQueue::isFull() {
+bool MyCircularQueue::isFull() const {
     if (isEmpty())
         return false;
 
@@ -69,7 +69,7 @@ bool MyCircularQueue::isFull() {
 
 }
 
-bool MyCircularQueue::isEmpty() {
+bool MyCircularQueue::isEmpty() const {
     return front == -1 && rear == -1;
 }
 

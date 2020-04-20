@@ -25,10 +25,10 @@ public:
     int Rear();
 
     /** Checks whether the circular queue is empty or not. */
-    bool isEmpty();
+    bool isEmpty() const;
 
     /** Checks whether the circular queue is full or not. */
-    bool isFull();
+    bool isFull() const;
 
 private:
     int *myQueue;
