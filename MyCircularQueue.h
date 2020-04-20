@@ -30,6 +30,7 @@ public:
     /** Checks whether the circular queue is full or not. */
     bool isFull() const;
 
+    /** Get the moving average. */
     float movingAvg(int winSize);
 
 private:
