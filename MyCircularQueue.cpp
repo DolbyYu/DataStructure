@@ -31,6 +31,12 @@ bool MyCircularQueue::deQueue() {
     if (isEmpty())
         return false;
 
+    if (front == rear) {
+        front = -1;
+        rear = -1;
+        return true;
+    }
+
     if (++front >= queueSize)
         front = 0;
 

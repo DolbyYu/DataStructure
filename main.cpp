@@ -7,17 +7,23 @@
 
 using namespace std;
 
-int main(){
+int main() {
     MyCircularQueue myCircularQueue(3);
 
-    cout << myCircularQueue.enQueue(1) << endl;
-    cout << myCircularQueue.enQueue(2) << endl;
-    cout << myCircularQueue.enQueue(3) << endl;
-    cout << myCircularQueue.enQueue(4) << endl;
+    cout << myCircularQueue.enQueue(1);
+    cout << myCircularQueue.enQueue(2);
+    cout << myCircularQueue.enQueue(3);
+    cout << myCircularQueue.enQueue(4);
     cout << myCircularQueue.Rear() << endl;
-    cout << myCircularQueue.isFull() << endl;
-    cout << myCircularQueue.deQueue() << endl;
-    cout << myCircularQueue.enQueue(4) << endl;
+    cout << myCircularQueue.isFull();
+    cout << myCircularQueue.deQueue();
+    cout << myCircularQueue.enQueue(4);
+    cout << myCircularQueue.Rear();
+    cout << myCircularQueue.Front() << endl;
+    cout << myCircularQueue.deQueue();
+    cout << myCircularQueue.deQueue();
+    cout << myCircularQueue.deQueue();
+    cout << myCircularQueue.deQueue();
     cout << myCircularQueue.Rear() << endl;
 
     return 0;
