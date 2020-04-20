@@ -18,8 +18,9 @@ bool MyCircularQueue::enQueue(int value) {
     if (isEmpty())
         front = 0;
 
-    if (++rear >= queueSize)
-        rear = 0;
+//    if (++rear >= queueSize)
+//        rear = 0;
+    rear = (1 + rear) % queueSize;
 
     myQueue[rear] = value;
 
@@ -37,8 +38,9 @@ bool MyCircularQueue::deQueue() {
         return true;
     }
 
-    if (++front >= queueSize)
-        front = 0;
+//    if (++front >= queueSize)
+//        front = 0;
+    front = (1 + front) % queueSize;
 
     return true;
 
@@ -59,13 +61,14 @@ int MyCircularQueue::Rear() {
 }
 
 bool MyCircularQueue::isFull() const {
-    if (isEmpty())
-        return false;
+//    if (isEmpty())
+//        return false;
 
-    if (front == 0 && rear == (queueSize - 1))
-        return true;
+//    if (front == 0 && rear == (queueSize - 1))
+//        return true;
+//    return (front - 1) == rear;
 
-    return (front - 1) == rear;
+    return (rear + 1) % queueSize == front;
 
 }
 

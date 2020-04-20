@@ -10,6 +10,7 @@ using namespace std;
 int main() {
     MyCircularQueue myCircularQueue(3);
 
+    cout << myCircularQueue.isFull();
     cout << myCircularQueue.enQueue(1);
     cout << myCircularQueue.enQueue(2);
     cout << myCircularQueue.enQueue(3);
