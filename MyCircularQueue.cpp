@@ -72,3 +72,7 @@ bool MyCircularQueue::isFull() {
 bool MyCircularQueue::isEmpty() {
     return front == -1 && rear == -1;
 }
+
+MyCircularQueue::~MyCircularQueue() {
+    free(myQueue);
+}
