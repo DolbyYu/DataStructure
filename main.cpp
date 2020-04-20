@@ -21,12 +21,13 @@ int main() {
     cout << myCircularQueue.enQueue(4);
     cout << myCircularQueue.Rear();
     cout << myCircularQueue.Front() << endl;
-    cout << myCircularQueue.deQueue();
-    cout << myCircularQueue.deQueue();
-    cout << myCircularQueue.deQueue();
-    cout << myCircularQueue.deQueue();
-    cout << myCircularQueue.Rear() << endl;
+//    cout << myCircularQueue.deQueue();
+//    cout << myCircularQueue.deQueue();
+//    cout << myCircularQueue.deQueue();
+//    cout << myCircularQueue.deQueue();
+//    cout << myCircularQueue.Rear() << endl;
 
+    cout << myCircularQueue.movingAvg(2) << endl;
     return 0;
 
 }

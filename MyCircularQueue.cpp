@@ -79,3 +79,18 @@ bool MyCircularQueue::isEmpty() const {
 MyCircularQueue::~MyCircularQueue() {
     free(myQueue);
 }
+
+float MyCircularQueue::movingAvg(int winSize) {
+    if (isEmpty())
+        return 0;
+
+    int i, index;
+    float sum;
+    for (i = 0, sum = 0; i < winSize; ++i) {
+        index = rear - i < 0 ? rear - i + queueSize : rear - i;
+        if (index == front)
+            break;
+        sum += (float)myQueue[index];
+    }
+    return sum / i;
+}

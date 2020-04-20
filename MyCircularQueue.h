@@ -30,6 +30,8 @@ public:
     /** Checks whether the circular queue is full or not. */
     bool isFull() const;
 
+    float movingAvg(int winSize);
+
 private:
     int *myQueue;
     int front, rear;
