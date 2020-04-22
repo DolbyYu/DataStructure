@@ -3,6 +3,6 @@ project( MyCircularQueue )
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(${PROJECT_NAME} main.cpp MyCircularQueue.cpp MyCircularQueue.h)
+add_executable(${PROJECT_NAME} main.cpp Solution.cpp Solution.h)
 
 target_link_libraries(${PROJECT_NAME})

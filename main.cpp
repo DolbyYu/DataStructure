@@ -3,31 +3,37 @@
 //
 
 #include <iostream>
-#include "MyCircularQueue.h"
+#include <queue>
+#include <vector>
+#include <cstdlib>
+#include "Solution.h"
 
 using namespace std;
 
+void gridInit(vector<vector<char>> &grid, int w, int h) {
+
+    grid.resize(h);
+    for (auto &line:grid)
+        line.resize(w);
+
+    for (auto &line:grid)
+        for (auto &pixel:line)
+            pixel = (char) ('0' + rand() % 2);
+}
+
 int main() {
-    MyCircularQueue myCircularQueue(3);
 
-    cout << myCircularQueue.isFull();
-    cout << myCircularQueue.enQueue(1);
-    cout << myCircularQueue.enQueue(2);
-    cout << myCircularQueue.enQueue(3);
-    cout << myCircularQueue.enQueue(4);
-    cout << myCircularQueue.Rear() << endl;
-    cout << myCircularQueue.isFull();
-    cout << myCircularQueue.deQueue();
-    cout << myCircularQueue.enQueue(4);
-    cout << myCircularQueue.Rear();
-    cout << myCircularQueue.Front() << endl;
-//    cout << myCircularQueue.deQueue();
-//    cout << myCircularQueue.deQueue();
-//    cout << myCircularQueue.deQueue();
-//    cout << myCircularQueue.deQueue();
-//    cout << myCircularQueue.Rear() << endl;
+    Solution solution;
+    vector<vector<char>> grid;
+    gridInit(grid, 5, 5);
+    for (const auto &line : grid) {
+        for (auto pixel:line)
+            cout << pixel;
+        cout << endl;
+    }
 
-    cout << myCircularQueue.movingAvg(2) << endl;
+    cout << "islandNum: " << solution.numIslands(grid);
+
     return 0;
 
 }
