@@ -25,7 +25,7 @@ int main() {
 
     Solution solution;
     vector<vector<char>> grid;
-    gridInit(grid, 5, 5);
+    gridInit(grid, 0, 0);
     for (const auto &line : grid) {
         for (auto pixel:line)
             cout << pixel;

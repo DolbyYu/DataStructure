@@ -7,10 +7,14 @@
 #include <iostream>
 
 int Solution::numIslands(vector<vector<char>> &grid) {
-
     int islandsNum = 0;
-    int mapWidth = grid.at(0).size();
     int mapHeight = grid.size();
+    if (mapHeight == 0)
+        return 0;
+    int mapWidth = grid.at(0).size();
+    if (mapWidth == 0)
+        return 0;
+
 
     std::cout << "size: " << mapWidth << "x" << mapHeight << std::endl;
 
