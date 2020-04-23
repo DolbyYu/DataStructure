@@ -15,9 +15,6 @@ int Solution::numIslands(vector<vector<char>> &grid) {
     if (mapWidth == 0)
         return 0;
 
-
-    std::cout << "size: " << mapWidth << "x" << mapHeight << std::endl;
-
     for (int i = 0; i < mapHeight; ++i)
         for (int j = 0; j < mapWidth; ++j)
             if (grid.at(i).at(j) == '1') {
