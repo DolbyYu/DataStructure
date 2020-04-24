@@ -25,7 +25,7 @@ int main() {
 
     Solution solution;
     vector<vector<char>> grid;
-    gridInit(grid, 100, 100);
+    gridInit(grid, 5, 5);
     for (const auto &line : grid) {
         for (auto pixel:line)
             cout << pixel;
@@ -33,6 +33,7 @@ int main() {
     }
 
     cout << "islandNum: " << solution.numIslands(grid);
+
 
     return 0;
 

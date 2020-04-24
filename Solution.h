@@ -14,7 +14,15 @@ public:
     int numIslands(vector<vector<char>> &grid);
 
 private:
-    void search(vector<vector<char>> &grid, int x, int y);
+    // 深度优先算法
+    static void search(vector<vector<char>> &grid, int x, int y);
+
+    // 广度优先算法
+    static void search2(vector<vector<char>> &grid, int x, int y);
+
+
+public:
+
 
 };
 
