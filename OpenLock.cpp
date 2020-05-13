@@ -4,6 +4,16 @@
 
 #include "OpenLock.h"
 
-int OpenLock::openLock(std::vector <string> &deadEnds, string &target) {
-    return 0;
+using namespace std;
+
+static initQueue(&vector<string> queue){
+
+}
+
+int OpenLock::openLock(vector<string> &deadEnds, string &target) {
+
+    vector<string> queue;
+    initQueue(queue);
+
+    return -1;
 }
