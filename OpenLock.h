@@ -12,6 +12,7 @@
 class OpenLock {
 
 public:
+    OpenLock( int slotWidth);
     int openLock(std::vector<std::string> &deadEnds, std::string &target);
 
 private:
@@ -22,7 +23,7 @@ private:
     void pushNeigh(std::vector<std::string> &queue, std::vector<std::string> &deadEnds, std::string &ele) const;
 
 
-    const int LOCK_SLOT_W = 4;
+    int LOCK_SLOT_W = 4;
 
 
 };

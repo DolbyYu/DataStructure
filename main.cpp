@@ -16,15 +16,15 @@ int main() {
 
     vector<string> deadEnds;
     deadEnds.clear();
-    for (auto & ele : deadEndsLib) {
+    for (auto &ele : deadEndsLib) {
         deadEnds.push_back(ele);
     }
 
     string target = "8888";
 
-    OpenLock oOpenLock;
+    OpenLock oOpenLock(4);
 
-    int step = oOpenLock.openLock(deadEnds,target);
+    int step = oOpenLock.openLock(deadEnds, target);
 
     cout << step;
 
