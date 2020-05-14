@@ -19,7 +19,7 @@ int main() {
         deadEnds.push_back(ele);
     }
 
-    string target = "8888";
+    string target = "0001";
 
     OpenLock oOpenLock(4);
 
