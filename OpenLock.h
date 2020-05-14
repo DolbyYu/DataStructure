@@ -12,10 +12,18 @@
 class OpenLock {
 
 public:
-    int openLock(std::vector<string> &deadEnds, string &target);
+    int openLock(std::vector<std::string> &deadEnds, std::string &target);
 
 private:
-    bool inDeadEnds(std::vector<string> &deadEnds, string &current);
+    static bool eleInQueue(std::vector<std::string> &queue, std::string &ele);
+
+    static std::string int2String(int number, int lockSlotSize);
+
+    void pushNeigh(std::vector<std::string> &queue, std::vector<std::string> &deadEnds, std::string &ele) const;
+
+
+    const int LOCK_SLOT_W = 4;
+
 
 };
 
