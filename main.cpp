@@ -9,10 +9,9 @@ using namespace std;
 
 int main() {
 
-    string deadEndsLib[3] = {
-            "0012",
-            "1234",
-            "4556"
+    string deadEndsLib[] = {
+            "8888",
+
     };
 
     vector<string> deadEnds;
@@ -21,7 +20,7 @@ int main() {
         deadEnds.push_back(ele);
     }
 
-    string target = "0099";
+    string target = "8888";
 
     OpenLock oOpenLock;
 
