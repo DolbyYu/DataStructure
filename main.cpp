@@ -11,7 +11,6 @@ int main() {
 
     string deadEndsLib[] = {
             "8888",
-
     };
 
     vector<string> deadEnds;

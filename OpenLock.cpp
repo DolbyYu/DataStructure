@@ -93,7 +93,3 @@ int OpenLock::openLock(vector<string> &deadEnds, string &target) {
     return -1;
 }
 
-OpenLock::OpenLock(int slotWidth) {
-    LOCK_SLOT_W = slotWidth;
-
-}

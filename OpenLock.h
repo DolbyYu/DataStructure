@@ -12,7 +12,8 @@
 class OpenLock {
 
 public:
-    OpenLock( int slotWidth);
+    explicit OpenLock(int slotWidth) : LOCK_SLOT_W(slotWidth) {}
+
     int openLock(std::vector<std::string> &deadEnds, std::string &target);
 
 private:
