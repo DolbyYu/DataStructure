@@ -9,23 +9,13 @@ using namespace std;
 
 int main() {
 
-    string deadEndsLib[] = {
-            "8888",
-    };
-
-    vector<string> deadEnds;
-    deadEnds.clear();
-    for (auto &ele : deadEndsLib) {
-        deadEnds.push_back(ele);
-    }
-
+    vector<string> deadEnds{"1111", "2222", "1234"};
     string target = "0001";
 
     OpenLock oOpenLock(4);
 
-    int step = oOpenLock.openLock(deadEnds, target);
+    cout << oOpenLock.openLock(deadEnds, target) << endl;
 
-    cout << step;
 
     return 0;
 

@@ -39,6 +39,7 @@ void OpenLock::pushNeigh(vector<string> &queue, vector<string> &deadEnds, string
 
     const char *ch = ele.c_str();
     char newNeigh[LOCK_SLOT_W + 1];
+    string newEle;
 
     for (int i = 0; i < LOCK_SLOT_W; ++i) {
         memccpy(newNeigh, ch, '\0', LOCK_SLOT_W + 1);
@@ -48,7 +49,7 @@ void OpenLock::pushNeigh(vector<string> &queue, vector<string> &deadEnds, string
         int upBit;
         upBit = intBit == 9 ? 0 : (intBit + 1);
         newNeigh[i] = '0' + upBit;
-        string newEle = newNeigh;
+        newEle = newNeigh;
         if (!eleInQueue(deadEnds, newEle) && !eleInQueue(queue, newEle))
             queue.push_back(newEle);
 
@@ -69,16 +70,12 @@ int OpenLock::openLock(vector<string> &deadEnds, string &target) {
     if (eleInQueue(deadEnds, rootNode) || eleInQueue(deadEnds, target))
         return -1;
 
-    vector<string> queue;
+    vector<string> queue{rootNode};
     int step = 0;
-
-    queue.push_back(rootNode);
 
     while (!queue.empty()) {
         int size = queue.size();
         for (int i = 0; i < size; ++i) {
-//            std::cout << "queue.size()=" << queue.size() << std::endl;
-
             string node = queue.front();
             queue.erase(queue.begin());
             deadEnds.push_back(node);
