@@ -9,14 +9,6 @@
 
 using namespace std;
 
-bool OpenLock::eleInQueue(vector<string> &queue, string &ele) {
-
-    auto iter = std::find(queue.begin(), queue.end(), ele);
-
-    return iter != queue.end();
-
-}
-
 string OpenLock::int2String(int number, int lockSlotSize) {
 
     if (number < 0)
@@ -35,14 +27,14 @@ string OpenLock::int2String(int number, int lockSlotSize) {
 
 }
 
-void OpenLock::pushNeigh(vector<string> &queue, vector<string> &deadEnds, string &ele) const {
+void OpenLock::pushNeigh(queue<string> &q, unordered_set<string> &deadEndVisited, string &ele) const {
 
     const char *ch = ele.c_str();
-    char newNeigh[LOCK_SLOT_W + 1];
+    char newNeigh[5];
     string newEle;
 
-    for (int i = 0; i < LOCK_SLOT_W; ++i) {
-        memccpy(newNeigh, ch, '\0', LOCK_SLOT_W + 1);
+    for (int i = 0; i < 4; ++i) {
+        memccpy(newNeigh, ch, '\0',  5);
         int intBit = newNeigh[i] - '0';
 
         //up neighbor
@@ -50,39 +42,48 @@ void OpenLock::pushNeigh(vector<string> &queue, vector<string> &deadEnds, string
         upBit = intBit == 9 ? 0 : (intBit + 1);
         newNeigh[i] = '0' + upBit;
         newEle = newNeigh;
-        if (!eleInQueue(deadEnds, newEle) && !eleInQueue(queue, newEle))
-            queue.push_back(newEle);
+        if (deadEndVisited.find(newEle) == deadEndVisited.end()){
+            q.push(newEle);
+            deadEndVisited.insert(newEle);
+        }
 
         //down neighbor
         int downBit;
         downBit = intBit == 0 ? 9 : (intBit - 1);
         newNeigh[i] = '0' + downBit;
         newEle = newNeigh;
-        if (!eleInQueue(deadEnds, newEle) && !eleInQueue(queue, newEle))
-            queue.push_back(newEle);
+        if (deadEndVisited.find(newEle) == deadEndVisited.end()){
+            q.push(newEle);
+            deadEndVisited.insert(newEle);
+        }
     }
 
 }
 
+// 避免在 vector 中查找，速度过慢
 int OpenLock::openLock(vector<string> &deadEnds, string &target) {
 
-    string rootNode = int2String(0, LOCK_SLOT_W);
-    if (eleInQueue(deadEnds, rootNode) || eleInQueue(deadEnds, target))
+    string rootNode = "0000";
+
+    unordered_set<string> deadEndVisited(deadEnds.begin(), deadEnds.end());
+    queue<string> q;
+
+    if (deadEndVisited.find(rootNode) !=deadEndVisited.end() || deadEndVisited.find(target) != deadEndVisited.end())
         return -1;
+    else
+        q.push(rootNode);
 
-    vector<string> queue{rootNode};
     int step = 0;
-
-    while (!queue.empty()) {
-        int size = queue.size();
+    while (!q.empty()) {
+        int size = q.size();
         for (int i = 0; i < size; ++i) {
-            string node = queue.front();
-            queue.erase(queue.begin());
-            deadEnds.push_back(node);
+            string node = q.front();
+            q.pop();
+            deadEndVisited.insert(node);
             if (node == target)
                 return step;
             else
-                pushNeigh(queue, deadEnds, node);
+                pushNeigh(q, deadEndVisited, node);
         }
         ++step;
     }

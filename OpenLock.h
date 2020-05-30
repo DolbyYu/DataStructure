@@ -8,6 +8,9 @@
 #include <vector>
 #include <cstdlib>
 #include <string>
+#include <unordered_set>
+#include <queue>
+
 
 class OpenLock {
 
@@ -17,11 +20,10 @@ public:
     int openLock(std::vector<std::string> &deadEnds, std::string &target);
 
 private:
-    static bool eleInQueue(std::vector<std::string> &queue, std::string &ele);
 
     static std::string int2String(int number, int lockSlotSize);
 
-    void pushNeigh(std::vector<std::string> &queue, std::vector<std::string> &deadEnds, std::string &ele) const;
+    void pushNeigh(std::queue<std::string> &q, std::unordered_set<std::string> &deadEndVisited, std::string &ele) const;
 
 
     int LOCK_SLOT_W = 4;
