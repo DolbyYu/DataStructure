@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "MinStack.h"
+#include "IsValid.h"
 #include <sys/time.h>
 
 using namespace std;
@@ -18,15 +18,13 @@ static unsigned long get_current_time() {
 
 int main() {
 
-    MinStack minStack;
-    minStack.push(-2);
-    minStack.push(0);
-    minStack.push(-3);
-    cout << minStack.getMin() << endl; // return -3
-    minStack.pop();
-    cout << minStack.top() << endl;    // return 0
-    cout << minStack.getMin() << endl; // return -2
+    string s = "{[]}";
+    IsValid objIsValid;
 
+    if(objIsValid.isValid(s))
+        cout << "Valid";
+    else
+        cout << "InValid";
 
     return 0;
 

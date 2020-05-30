@@ -3,6 +3,6 @@ project( DataStructure )
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(${PROJECT_NAME} main.cpp MinStack.h)
+add_executable(${PROJECT_NAME} main.cpp IsValid.h)
 
 target_link_libraries(${PROJECT_NAME})
