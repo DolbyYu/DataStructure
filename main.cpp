@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <vector>
-#include "DailyTemperatures.h"
+#include "EvalRPN.h"
 #include <sys/time.h>
 
 using namespace std;
@@ -19,13 +19,12 @@ static unsigned long get_current_time() {
 
 int main() {
 
-    vector<int> T = {73, 74, 75, 71, 69, 72, 76, 73};
+    vector<string> tokens = {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
     //your output should be [1, 1, 4, 2, 1, 1, 0, 0]
 
-    Solution solution;
+    EvalRPN evalRpn;
 
-    for (auto i : solution.dailyTemperatures2(T))
-        cout << i << endl;
+    cout << evalRpn.evalRPN(tokens);
 
     return 0;
 
