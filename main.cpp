@@ -3,7 +3,8 @@
 //
 
 #include <iostream>
-#include "IsValid.h"
+#include <vector>
+#include "DailyTemperatures.h"
 #include <sys/time.h>
 
 using namespace std;
@@ -18,13 +19,13 @@ static unsigned long get_current_time() {
 
 int main() {
 
-    string s = "{[]}";
-    IsValid objIsValid;
+    vector<int> T = {73, 74, 75, 71, 69, 72, 76, 73};
+    //your output should be [1, 1, 4, 2, 1, 1, 0, 0]
 
-    if(objIsValid.isValid(s))
-        cout << "Valid";
-    else
-        cout << "InValid";
+    Solution solution;
+
+    for (auto i : solution.dailyTemperatures2(T))
+        cout << i << endl;
 
     return 0;
 
