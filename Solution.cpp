@@ -19,7 +19,7 @@ int Solution::numIslands(vector<vector<char>> &grid) {
         for (int j = 0; j < mapWidth; ++j)
             if (grid.at(i).at(j) == '1') {
                 ++islandsNum;
-                search2(grid, i, j);
+                search(grid, i, j);
             }
 
     return islandsNum;
