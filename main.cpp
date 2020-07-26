@@ -4,27 +4,21 @@
 
 #include <iostream>
 #include <vector>
-#include "EvalRPN.h"
-#include <sys/time.h>
+
+#include "FindTargetSumWays.h"
 
 using namespace std;
 
-static unsigned long get_current_time() {
-    struct timeval tv{};
-
-    gettimeofday(&tv, nullptr);
-
-    return (tv.tv_sec * 1000000 + tv.tv_usec);
-}
-
 int main() {
 
-    vector<string> tokens = {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
+    vector<int> nums = {0,0,0,0,0,0,0,0,1};
+//    vector<int> nums = {1,0};
+    int target = 1;
     //your output should be [1, 1, 4, 2, 1, 1, 0, 0]
 
-    EvalRPN evalRpn;
+    FindTargetSumWays findTargetSumWays;
 
-    cout << evalRpn.evalRPN(tokens);
+    cout << findTargetSumWays.findTargetSumWays(nums, target);
 
     return 0;
 
