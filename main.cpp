@@ -5,19 +5,19 @@
 #include <iostream>
 #include <vector>
 
-#include "FindTargetSumWays.h"
+#include "Stack2Queue.h"
 
 using namespace std;
 
 int main() {
 
-    vector<int> nums = {0,0,0,0,0,0,0,0,1};
-//    vector<int> nums = {1,0};
-    int target = 1;
+    MyQueue myQueue;
 
-    FindTargetSumWays findTargetSumWays;
+    myQueue.push(1);
+    myQueue.push(2);
+    myQueue.push(3);
+    cout << myQueue.peek() << endl;
 
-    cout << findTargetSumWays.findTargetSumWays(nums, target);
 
     return 0;
 
