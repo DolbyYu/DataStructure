@@ -5,23 +5,15 @@
 #include <iostream>
 #include <vector>
 
-#include "Queue2Stack.h"
+#include "decodeString.h"
 
 using namespace std;
 
 int main() {
 
-    MyStack myStack;
+    Solution solution;
 
-    myStack.push(1);
-    myStack.push(2);
-    myStack.push(3);
-    cout << myStack.pop() << endl;
-    cout << myStack.pop() << endl;
-    cout << myStack.pop() << endl;
-
-    //    cout << myStack.top() << endl;
-    cout << myStack.empty() << endl;
+    std::cout << solution.decodeString("abc3[cd]xyz");
 
 
     return 0;
