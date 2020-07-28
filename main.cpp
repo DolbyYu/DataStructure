@@ -5,18 +5,23 @@
 #include <iostream>
 #include <vector>
 
-#include "Stack2Queue.h"
+#include "Queue2Stack.h"
 
 using namespace std;
 
 int main() {
 
-    MyQueue myQueue;
+    MyStack myStack;
 
-    myQueue.push(1);
-    myQueue.push(2);
-    myQueue.push(3);
-    cout << myQueue.peek() << endl;
+    myStack.push(1);
+    myStack.push(2);
+    myStack.push(3);
+    cout << myStack.pop() << endl;
+    cout << myStack.pop() << endl;
+    cout << myStack.pop() << endl;
+
+    //    cout << myStack.top() << endl;
+    cout << myStack.empty() << endl;
 
 
     return 0;
