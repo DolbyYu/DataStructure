@@ -9,12 +9,29 @@
 
 using namespace std;
 
+void printVector(vector<vector<int>> &image){
+
+    for (const auto& row:image) {
+        for (auto ele : row) {
+            cout << ele << "\t";
+        }
+        cout << endl;
+    }
+
+}
+
 int main() {
 
     Solution solution;
 
-    std::cout << solution.decodeString( "10[leetcode]");
+    vector<vector<int>> image = {{0,0,0},{0,1,0}};
+//    vector<vector<int>> image = {{0}};
 
+
+    printVector(image);
+    cout << endl;
+    solution.floodFill(image, 1, 0, 2);
+    printVector(image);
 
     return 0;
 

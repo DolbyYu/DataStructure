@@ -13,77 +13,41 @@ using namespace std;
 
 class Solution {
 public:
-    string decodeString(string s) {
+    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int newColor) {
 
-        int k = 0;
-        string encodeString = "";
+        if (image.at(sr).at(sc) == newColor)
+            return image;
 
-        for (auto ele:s) {
-            if (ele != ']')
-                st.push(ele);
-            else {
-                for (int i = 0, size = st.size(); i < size;++i)
-                {
-                    char c = st.top();
-                    st.pop();
+        imgWidth = image.at(0).size();
+        imgHeight = image.size();
 
-                    if (c != '[')
-                        encodeString += c;
-                    else {
+        search(image,sr, sc, newColor, image.at(sr).at(sc));
 
-                        k = getK();
-
-                        string tempS;
-                        for (int j = 0; j < k; ++j){
-                            tempS += encodeString;
-                        }
-                        encodeString = tempS;
-
-                        for (auto iter = encodeString.end() - 1; iter >= encodeString.begin(); --iter)
-                            st.push(*iter);
-
-                        encodeString = "";
-
-                        break;
-
-                    }
-                }
-            }
-        }
-
-        char returnStr[st.size()+1];
-        returnStr[st.size()] = '\0';
-        for (int i = st.size() - 1; i >= 0; --i){
-
-            returnStr[i] = st.top();
-            st.pop();
-
-        }
-
-        return returnStr;
+        return image;
 
     }
 
 private:
-    stack<char> st;
+    int imgWidth, imgHeight;
 
-    int getK(){
+    void search(vector<vector<int>>& image, int sr, int sc, int newColor, int oldColor){
 
-        char ele;
-        int k = 0;
-        for (int i = 0, size = st.size(); i < size; ++i){
-            ele = st.top();
-            if ('0' <= ele && ele <= '9')
-            {
-                k += pow(10,i)*(ele - '0');
-                st.pop();
-            } else
-                return k;
-        }
+        image.at(sr).at(sc) = newColor;
 
-        return k;
+        if (sr + 1 < imgHeight && image.at(sr + 1).at(sc) == oldColor)
+            search(image, sr + 1, sc, newColor, oldColor);
+        if (sr - 1 >= 0 && image.at(sr - 1).at(sc) == oldColor)
+            search(image, sr - 1, sc, newColor, oldColor);
+        if (sc + 1 < imgWidth && image.at(sr).at(sc + 1) == oldColor)
+            search(image, sr, sc + 1, newColor, oldColor);
+        if (sc - 1 >= 0 && image.at(sr).at(sc - 1) == oldColor)
+            search(image, sr, sc - 1, newColor, oldColor);
+
 
     }
+
+
+
 };
 
 #endif //DATASTRUCTURE_DECODESTRING_H
