@@ -2,8 +2,8 @@
 // Created by 余爱生 on 2020/7/28.
 //
 
-#ifndef DATASTRUCTURE_DECODESTRING_H
-#define DATASTRUCTURE_DECODESTRING_H
+#ifndef DATASTRUCTURE_FLOODFILL_H
+#define DATASTRUCTURE_FLOODFILL_H
 
 #include <string>
 #include <stack>
@@ -50,4 +50,4 @@ private:
 
 };
 
-#endif //DATASTRUCTURE_DECODESTRING_H
+#endif //DATASTRUCTURE_FLOODFILL_H
