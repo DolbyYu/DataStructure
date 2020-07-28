@@ -7,6 +7,7 @@
 
 #include <string>
 #include <stack>
+#include <cmath>
 
 using namespace std;
 
@@ -29,18 +30,17 @@ public:
                     if (c != '[')
                         encodeString += c;
                     else {
-                        k = st.top() - '0';
-                        st.pop();
 
-                        string tempS = encodeString;
-                        encodeString = "";
-                        for (int i = 0; i < k; ++i){
-                            encodeString += tempS;
+                        k = getK();
+
+                        string tempS;
+                        for (int j = 0; j < k; ++j){
+                            tempS += encodeString;
                         }
+                        encodeString = tempS;
 
                         for (auto iter = encodeString.end() - 1; iter >= encodeString.begin(); --iter)
                             st.push(*iter);
-
 
                         encodeString = "";
 
@@ -67,9 +67,21 @@ public:
 private:
     stack<char> st;
 
-    void pushStringInStack(string s){
+    int getK(){
 
+        char ele;
+        int k = 0;
+        for (int i = 0, size = st.size(); i < size; ++i){
+            ele = st.top();
+            if ('0' <= ele && ele <= '9')
+            {
+                k += pow(10,i)*(ele - '0');
+                st.pop();
+            } else
+                return k;
+        }
 
+        return k;
 
     }
 };

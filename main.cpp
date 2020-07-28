@@ -13,7 +13,7 @@ int main() {
 
     Solution solution;
 
-    std::cout << solution.decodeString("abc3[cd]xyz");
+    std::cout << solution.decodeString( "10[leetcode]");
 
 
     return 0;
