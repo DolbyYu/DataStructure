@@ -24,7 +24,7 @@ int main() {
 
     Solution solution;
 
-    vector<vector<int>> image = {{0,0,0},{0,1,0},{1,1,1}};
+    vector<vector<int>> image = {{0,0,0, 0},{0,1,0,1},{1,1,1,0}, {1,1,0,0}};
 //    vector<vector<int>> image = {{0}};
 
 

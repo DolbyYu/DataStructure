@@ -37,7 +37,7 @@ public:
                 int hi = pairs.first + direction[0];
                 int wj = pairs.second + direction[1];
 
-                if (hi >= 0 && hi < w && wj >=0 && wj < h && 1 != visited.at(hi).at(wj)){
+                if (hi >= 0 && hi < h && wj >=0 && wj < w && 1 != visited.at(hi).at(wj)){
                     q.emplace(hi,wj);
                     visited.at(hi).at(wj) = 1;
                     returnM.at(hi).at(wj) = returnM.at(pairs.first).at(pairs.second) + 1;
