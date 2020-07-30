@@ -19,7 +19,6 @@ public:
 
        queue <pair<int, int>> q;
        vector<vector<int>> visited(h, vector<int>(w));
-       vector<vector<int>> returnM(h, vector<int>(w));
 
        for (int hi = 0; hi < h; ++hi)
            for (int wj = 0; wj < w; ++wj){
@@ -40,12 +39,12 @@ public:
                 if (hi >= 0 && hi < h && wj >=0 && wj < w && 1 != visited.at(hi).at(wj)){
                     q.emplace(hi,wj);
                     visited.at(hi).at(wj) = 1;
-                    returnM.at(hi).at(wj) = returnM.at(pairs.first).at(pairs.second) + 1;
+                    matrix.at(hi).at(wj) = matrix.at(pairs.first).at(pairs.second) + 1;
                 }
             }
        }
 
-        return returnM;
+        return matrix;
 
     }
 
