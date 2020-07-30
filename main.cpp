@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 
-#include "floodFill.h"
+#include "matrix.h"
 
 using namespace std;
 
@@ -24,14 +24,14 @@ int main() {
 
     Solution solution;
 
-    vector<vector<int>> image = {{0,0,0},{0,1,0}};
+    vector<vector<int>> image = {{0,0,0},{0,1,0},{1,1,1}};
 //    vector<vector<int>> image = {{0}};
 
 
     printVector(image);
     cout << endl;
-    solution.floodFill(image, 1, 0, 2);
-    printVector(image);
+    vector<vector<int>> result = solution.updateMatrix(image);
+    printVector(result);
 
     return 0;
 
