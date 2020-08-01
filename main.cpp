@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 
-#include "matrix.h"
+#include "canVisitAllRooms.h"
 
 using namespace std;
 
@@ -24,14 +24,14 @@ int main() {
 
     Solution solution;
 
-    vector<vector<int>> image = {{0,0,0, 0},{0,1,0,1},{1,1,1,0}, {1,1,0,0}};
+    vector<vector<int>> image = {{1},{2},{3},{}};
 //    vector<vector<int>> image = {{0}};
 
 
     printVector(image);
     cout << endl;
-    vector<vector<int>> result = solution.updateMatrix(image);
-    printVector(result);
+    auto result = solution.canVisitAllRooms(image);
+    cout << result << endl;
 
     return 0;
 
