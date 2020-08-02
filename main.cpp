@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 
-#include "merge.h"
+#include "mergeMatrix.h"
 
 using namespace std;
 

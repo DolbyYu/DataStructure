@@ -3,6 +3,6 @@ project( DataStructure )
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(${PROJECT_NAME} main.cpp merge.h)
+add_executable(${PROJECT_NAME} main.cpp mergeMatrix.h)
 
 target_link_libraries(${PROJECT_NAME})
