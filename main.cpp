@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 
-#include "canVisitAllRooms.h"
+#include "pivotIndex.h"
 
 using namespace std;
 
@@ -24,13 +24,13 @@ int main() {
 
     Solution solution;
 
-    vector<vector<int>> image = {{1},{2},{3},{}};
+//    vector<int> image = {1, 7, 3, 6, 5, 6};
+    vector<int> image = {1,3,5,6};
+
 //    vector<vector<int>> image = {{0}};
 
 
-    printVector(image);
-    cout << endl;
-    auto result = solution.canVisitAllRooms(image);
+    auto result = solution.searchInsert(image,0);
     cout << result << endl;
 
     return 0;
