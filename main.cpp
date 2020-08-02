@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 
-#include "mergeMatrix.h"
+#include "setZeroes.h"
 
 using namespace std;
 
@@ -24,17 +24,18 @@ int main() {
 
     Solution solution;
 
-    vector<vector<int>> image = {{1,3},{2,6},{8,10},{15,18}};
-//    vector<vector<int>> image = {{1,4},{4,5}};
-//    vector<vector<int>> image = {{1,4},{2,3}};
-//    vector<vector<int>> image = {{2,3},{4,5},{6,7},{8,9},{1,10}};
+    vector<vector<int>> image = {
+            {0,1,2,0},
+                {3,4,5,2},
+                    {1,3,1,5}
+};
 
 
 //    vector<vector<int>> image = {{0}};
 
 
-    auto result = solution.merge(image);
-    printVector(result);
+    solution.setZeroes(image);
+    printVector(image);
 
     return 0;
 
