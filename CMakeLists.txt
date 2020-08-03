@@ -3,6 +3,6 @@ project( DataStructure )
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(${PROJECT_NAME} main.cpp setZeroes.h)
+add_executable(${PROJECT_NAME} main.cpp findDiagonalOrder.h)
 
 target_link_libraries(${PROJECT_NAME})

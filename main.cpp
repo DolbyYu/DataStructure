@@ -5,18 +5,16 @@
 #include <iostream>
 #include <vector>
 
-#include "setZeroes.h"
+#include "findDiagonalOrder.h"
 
 using namespace std;
 
-void printVector(vector<vector<int>> &image){
+void printVector(vector<int> &image){
 
-    for (const auto& row:image) {
-        for (auto ele : row) {
+        for (auto ele : image) {
             cout << ele << "\t";
         }
-        cout << endl;
-    }
+
 
 }
 
@@ -24,18 +22,14 @@ int main() {
 
     Solution solution;
 
-    vector<vector<int>> image = {
-            {0,1,2,0},
-                {3,4,5,2},
-                    {1,3,1,5}
-};
+    vector<vector<int>> image = {{}};
 
 
 //    vector<vector<int>> image = {{0}};
 
 
-    solution.setZeroes(image);
-    printVector(image);
+    auto result = solution.findDiagonalOrder(image);
+    printVector(result);
 
     return 0;
 
